@@ -30,7 +30,7 @@ export default function ButtonAppBar() {
             {/* <MenuIcon /> */}
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            News
+            Metal App
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>

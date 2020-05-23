@@ -25,30 +25,47 @@ const useStyles = makeStyles({
 
 let label1 = 'Music';
 
-function Dashboard() {
+function Dashboard(props) {
     const classes = useStyles();
-    const [notifiaction, setNotification] = React.useState('');
+    const [notification, setNotification] = React.useState('');
     const [genre, setGenre] = React.useState('');
     const [value, setValue] = React.useState(30);
     const [state, setState] = React.useState({
         checkedA: true,
         checkedB: true,
     });
-    // const componentDidUpdate()
+    React.useEffect(() => {
+        if (genre === 20) {setNotification('Hell Yeah!')}
+        if (genre === 10) {setNotification('Go Harder!')}
+        if (genre === 30) {setNotification('🤘')}
+    }, [genre]);
+    React.useEffect(() => {
+        setNotification('Crank it!');
+        if (value > 90) {
+            setNotification('Death to All but Metal!')
+        }
+        console.log(value)
+    }, [value]);
+    React.useEffect(() => {
+        if(state.checkedA === true) {setNotification('The good stuff.')}
+        else {setNotification('Get the good stuff.')}
+    }, [state]);
 
     const handleChange = (event) => {
         setState({ ...state, [event.target.name]: event.target.checked });
         // console.log(state.CheckedA)
-        state.CheckedA ? label1 = 'Music' : label1 = 'Good Music'
+        // state.CheckedA ? label1 = 'Music' : label1 = 'Good Music'
     };
     const handleVolume = (event, newValue) => {
         setValue(newValue);
     };
     const handleGenre = (event) => {
         setGenre(event.target.value);
-      };
+    };
 
     return (
+        <div>
+            <h2>{notification}</h2>
         <div className='dash'>
             <Card className='card'>
                 <CardContent>
@@ -107,6 +124,7 @@ function Dashboard() {
       </FormControl>
                 </CardActions>
             </Card>
+        </div>
         </div>
     )
     
