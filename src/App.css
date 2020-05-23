@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -26,6 +26,20 @@
 
 .App-link {
   color: #61dafb;
+} */
+
+.form {
+  margin-left: 40px;
+}
+
+.dash {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card {
+  padding: 40px;
 }
 
 @keyframes App-logo-spin {

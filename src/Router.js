@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router'
-import App from './App';
+import App from './Main';
 // import Home from './Home'
 // import Dashboard from './components/Dashboard'
 
